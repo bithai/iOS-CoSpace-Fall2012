@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HCSViewController : UIViewController
+@interface HCSViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) NSMutableData *responseData;
+@property (strong, nonatomic) NSArray *items;
 
 @end
