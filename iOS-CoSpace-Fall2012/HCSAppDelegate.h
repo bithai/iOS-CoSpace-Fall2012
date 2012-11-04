@@ -10,6 +10,7 @@
 
 @class HCSViewController;
 
+
 @interface HCSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

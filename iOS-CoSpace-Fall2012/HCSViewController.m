@@ -7,6 +7,8 @@
 //
 
 #import "HCSViewController.h"
+#import <SystemConfiguration/SystemConfiguration.h>
+#import "Reachability.h"
 
 @interface HCSViewController ()
 
@@ -22,12 +24,60 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     NSLog(@"viewDidLoad");
+  
+  
+  self.checkReachability;
+  
+  
+  
   self.responseData = [NSMutableData data];
   
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://getfitchimp.aws.af.cm/api/v1/categories"]];
   
   [[NSURLConnection alloc] initWithRequest:request delegate:self];
   
+}
+
+
+- (void)checkReachability
+{
+  // allocate a reachability object
+  Reachability* reach = [Reachability reachabilityWithHostname:@"http://getfitchimp.aws.af.cm"];
+  
+  // set the blocks
+  reach.reachableBlock = ^(Reachability*reach)
+  {
+    NSLog(@"REACHABLE!");
+  };
+  
+  reach.unreachableBlock = ^(Reachability*reach)
+  {
+    NSLog(@"UNREACHABLE!");
+  };
+  
+  if(reach.isReachable) {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Alert"
+                                                   message: @"You're connected to the server"
+                                                  delegate: nil
+                                         cancelButtonTitle: @"OK"
+                                         otherButtonTitles:nil];
+    
+    //Show Alert On The View
+    [alert show];
+    
+    
+  }
+  else {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Alert"
+                                                   message: @"You're not connected to the server"
+                                                  delegate: nil
+                                         cancelButtonTitle: @"OK"
+                                         otherButtonTitles:nil];
+    [alert show];
+  }
+  
+  // start the notifier which will cause the reachability object to retain itself!
+  [reach startNotifier];
 }
 
 - (void)viewDidUnload
@@ -60,6 +110,8 @@
 }
 
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection {
+
+  
   // A delegate method called by the NSURLConnection when the connection has been
   // done successfully.  We shut down the connection with a nil status, which
   // causes the image to be displayed.
