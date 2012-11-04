@@ -20,6 +20,22 @@
 		D311FB991636159500797BF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D311FB7A1636159500797BF9 /* Foundation.framework */; };
 		D311FBA11636159500797BF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D311FB9F1636159500797BF9 /* InfoPlist.strings */; };
 		D311FBA41636159500797BF9 /* iOS_CoSpace_Fall2012Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D311FBA31636159500797BF9 /* iOS_CoSpace_Fall2012Tests.m */; };
+		EDE1A37F164627EA00260231 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EDE1A352164627EA00260231 /* .gitignore */; };
+		EDE1A380164627EA00260231 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDE1A355164627EA00260231 /* InfoPlist.strings */; };
+		EDE1A381164627EA00260231 /* TMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE1A357164627EA00260231 /* TMViewController.xib */; };
+		EDE1A382164627EA00260231 /* iOSReachabilityTestARC-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDE1A359164627EA00260231 /* iOSReachabilityTestARC-Info.plist */; };
+		EDE1A383164627EA00260231 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE1A35B164627EA00260231 /* main.m */; };
+		EDE1A384164627EA00260231 /* TMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE1A35D164627EA00260231 /* TMAppDelegate.m */; };
+		EDE1A385164627EA00260231 /* TMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE1A35F164627EA00260231 /* TMViewController.m */; };
+		EDE1A386164627EA00260231 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EDE1A365164627EA00260231 /* Credits.rtf */; };
+		EDE1A387164627EA00260231 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDE1A367164627EA00260231 /* InfoPlist.strings */; };
+		EDE1A388164627EA00260231 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE1A369164627EA00260231 /* MainMenu.xib */; };
+		EDE1A389164627EA00260231 /* MacOSReachabilityTestARC-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDE1A36B164627EA00260231 /* MacOSReachabilityTestARC-Info.plist */; };
+		EDE1A38A164627EA00260231 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE1A36D164627EA00260231 /* main.m */; };
+		EDE1A38B164627EA00260231 /* TMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE1A36F164627EA00260231 /* TMAppDelegate.m */; };
+		EDE1A38C164627EA00260231 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE1A374164627EA00260231 /* Reachability.m */; };
+		EDE1A38D164627EA00260231 /* Reachability.podspec in Resources */ = {isa = PBXBuildFile; fileRef = EDE1A375164627EA00260231 /* Reachability.podspec */; };
+		EDE1A38E164627EA00260231 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EDE1A376164627EA00260231 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +45,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = D311FB731636159500797BF9;
 			remoteInfo = "iOS-CoSpace-Fall2012";
+		};
+		EDE1A390164627EB00260231 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDE1A360164627EA00260231 /* iOSReachabilityTestARC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EAEB2077147A7ED2009545B6;
+			remoteInfo = iOSReachabilityTestARC;
+		};
+		EDE1A393164627EB00260231 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDE1A370164627EA00260231 /* MacOSReachabilityTestARC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EAEB2046147A7DFE009545B6;
+			remoteInfo = MacOSReachabilityTestARC;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -52,6 +82,30 @@
 		D311FBA01636159500797BF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D311FBA21636159500797BF9 /* iOS_CoSpace_Fall2012Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_CoSpace_Fall2012Tests.h; sourceTree = "<group>"; };
 		D311FBA31636159500797BF9 /* iOS_CoSpace_Fall2012Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_CoSpace_Fall2012Tests.m; sourceTree = "<group>"; };
+		EDE1A352164627EA00260231 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		EDE1A356164627EA00260231 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EDE1A358164627EA00260231 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TMViewController.xib; sourceTree = "<group>"; };
+		EDE1A359164627EA00260231 /* iOSReachabilityTestARC-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iOSReachabilityTestARC-Info.plist"; sourceTree = "<group>"; };
+		EDE1A35A164627EA00260231 /* iOSReachabilityTestARC-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iOSReachabilityTestARC-Prefix.pch"; sourceTree = "<group>"; };
+		EDE1A35B164627EA00260231 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EDE1A35C164627EA00260231 /* TMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMAppDelegate.h; sourceTree = "<group>"; };
+		EDE1A35D164627EA00260231 /* TMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMAppDelegate.m; sourceTree = "<group>"; };
+		EDE1A35E164627EA00260231 /* TMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMViewController.h; sourceTree = "<group>"; };
+		EDE1A35F164627EA00260231 /* TMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMViewController.m; sourceTree = "<group>"; };
+		EDE1A360164627EA00260231 /* iOSReachabilityTestARC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = iOSReachabilityTestARC.xcodeproj; sourceTree = "<group>"; };
+		EDE1A366164627EA00260231 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		EDE1A368164627EA00260231 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EDE1A36A164627EA00260231 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EDE1A36B164627EA00260231 /* MacOSReachabilityTestARC-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MacOSReachabilityTestARC-Info.plist"; sourceTree = "<group>"; };
+		EDE1A36C164627EA00260231 /* MacOSReachabilityTestARC-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MacOSReachabilityTestARC-Prefix.pch"; sourceTree = "<group>"; };
+		EDE1A36D164627EA00260231 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EDE1A36E164627EA00260231 /* TMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMAppDelegate.h; sourceTree = "<group>"; };
+		EDE1A36F164627EA00260231 /* TMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMAppDelegate.m; sourceTree = "<group>"; };
+		EDE1A370164627EA00260231 /* MacOSReachabilityTestARC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = MacOSReachabilityTestARC.xcodeproj; sourceTree = "<group>"; };
+		EDE1A373164627EA00260231 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		EDE1A374164627EA00260231 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		EDE1A375164627EA00260231 /* Reachability.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Reachability.podspec; sourceTree = "<group>"; };
+		EDE1A376164627EA00260231 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +135,10 @@
 		D311FB691636159500797BF9 = {
 			isa = PBXGroup;
 			children = (
+				EDE1A34E164627AD00260231 /* External */,
+				D311FB771636159500797BF9 /* Frameworks */,
 				D311FB7E1636159500797BF9 /* iOS-CoSpace-Fall2012 */,
 				D311FB9C1636159500797BF9 /* iOS-CoSpace-Fall2012Tests */,
-				D311FB771636159500797BF9 /* Frameworks */,
 				D311FB751636159500797BF9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -151,6 +206,94 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EDE1A34E164627AD00260231 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1A351164627EA00260231 /* Reachability */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		EDE1A351164627EA00260231 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1A352164627EA00260231 /* .gitignore */,
+				EDE1A353164627EA00260231 /* iOSReachabilityTestARC */,
+				EDE1A363164627EA00260231 /* MacOSReachabilityTestARC */,
+				EDE1A373164627EA00260231 /* Reachability.h */,
+				EDE1A374164627EA00260231 /* Reachability.m */,
+				EDE1A375164627EA00260231 /* Reachability.podspec */,
+				EDE1A376164627EA00260231 /* README.md */,
+			);
+			name = Reachability;
+			path = External/Reachability;
+			sourceTree = "<group>";
+		};
+		EDE1A353164627EA00260231 /* iOSReachabilityTestARC */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1A354164627EA00260231 /* iOSReachabilityTestARC */,
+				EDE1A360164627EA00260231 /* iOSReachabilityTestARC.xcodeproj */,
+			);
+			path = iOSReachabilityTestARC;
+			sourceTree = "<group>";
+		};
+		EDE1A354164627EA00260231 /* iOSReachabilityTestARC */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1A355164627EA00260231 /* InfoPlist.strings */,
+				EDE1A357164627EA00260231 /* TMViewController.xib */,
+				EDE1A359164627EA00260231 /* iOSReachabilityTestARC-Info.plist */,
+				EDE1A35A164627EA00260231 /* iOSReachabilityTestARC-Prefix.pch */,
+				EDE1A35B164627EA00260231 /* main.m */,
+				EDE1A35C164627EA00260231 /* TMAppDelegate.h */,
+				EDE1A35D164627EA00260231 /* TMAppDelegate.m */,
+				EDE1A35E164627EA00260231 /* TMViewController.h */,
+				EDE1A35F164627EA00260231 /* TMViewController.m */,
+			);
+			path = iOSReachabilityTestARC;
+			sourceTree = "<group>";
+		};
+		EDE1A361164627EA00260231 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1A391164627EB00260231 /* iOSReachabilityTestARC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDE1A363164627EA00260231 /* MacOSReachabilityTestARC */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1A364164627EA00260231 /* MacOSReachabilityTestARC */,
+				EDE1A370164627EA00260231 /* MacOSReachabilityTestARC.xcodeproj */,
+			);
+			path = MacOSReachabilityTestARC;
+			sourceTree = "<group>";
+		};
+		EDE1A364164627EA00260231 /* MacOSReachabilityTestARC */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1A365164627EA00260231 /* Credits.rtf */,
+				EDE1A367164627EA00260231 /* InfoPlist.strings */,
+				EDE1A369164627EA00260231 /* MainMenu.xib */,
+				EDE1A36B164627EA00260231 /* MacOSReachabilityTestARC-Info.plist */,
+				EDE1A36C164627EA00260231 /* MacOSReachabilityTestARC-Prefix.pch */,
+				EDE1A36D164627EA00260231 /* main.m */,
+				EDE1A36E164627EA00260231 /* TMAppDelegate.h */,
+				EDE1A36F164627EA00260231 /* TMAppDelegate.m */,
+			);
+			path = MacOSReachabilityTestARC;
+			sourceTree = "<group>";
+		};
+		EDE1A371164627EA00260231 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1A394164627EB00260231 /* MacOSReachabilityTestARC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,6 +353,16 @@
 			mainGroup = D311FB691636159500797BF9;
 			productRefGroup = D311FB751636159500797BF9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EDE1A361164627EA00260231 /* Products */;
+					ProjectRef = EDE1A360164627EA00260231 /* iOSReachabilityTestARC.xcodeproj */;
+				},
+				{
+					ProductGroup = EDE1A371164627EA00260231 /* Products */;
+					ProjectRef = EDE1A370164627EA00260231 /* MacOSReachabilityTestARC.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D311FB731636159500797BF9 /* iOS-CoSpace-Fall2012 */,
@@ -218,6 +371,23 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		EDE1A391164627EB00260231 /* iOSReachabilityTestARC.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = iOSReachabilityTestARC.app;
+			remoteRef = EDE1A390164627EB00260231 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EDE1A394164627EB00260231 /* MacOSReachabilityTestARC.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = MacOSReachabilityTestARC.app;
+			remoteRef = EDE1A393164627EB00260231 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		D311FB721636159500797BF9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -225,6 +395,16 @@
 			files = (
 				D311FB831636159500797BF9 /* InfoPlist.strings in Resources */,
 				D311FB8F1636159500797BF9 /* HCSViewController.xib in Resources */,
+				EDE1A37F164627EA00260231 /* .gitignore in Resources */,
+				EDE1A380164627EA00260231 /* InfoPlist.strings in Resources */,
+				EDE1A381164627EA00260231 /* TMViewController.xib in Resources */,
+				EDE1A382164627EA00260231 /* iOSReachabilityTestARC-Info.plist in Resources */,
+				EDE1A386164627EA00260231 /* Credits.rtf in Resources */,
+				EDE1A387164627EA00260231 /* InfoPlist.strings in Resources */,
+				EDE1A388164627EA00260231 /* MainMenu.xib in Resources */,
+				EDE1A389164627EA00260231 /* MacOSReachabilityTestARC-Info.plist in Resources */,
+				EDE1A38D164627EA00260231 /* Reachability.podspec in Resources */,
+				EDE1A38E164627EA00260231 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +442,12 @@
 				D311FB851636159500797BF9 /* main.m in Sources */,
 				D311FB891636159500797BF9 /* HCSAppDelegate.m in Sources */,
 				D311FB8C1636159500797BF9 /* HCSViewController.m in Sources */,
+				EDE1A383164627EA00260231 /* main.m in Sources */,
+				EDE1A384164627EA00260231 /* TMAppDelegate.m in Sources */,
+				EDE1A385164627EA00260231 /* TMViewController.m in Sources */,
+				EDE1A38A164627EA00260231 /* main.m in Sources */,
+				EDE1A38B164627EA00260231 /* TMAppDelegate.m in Sources */,
+				EDE1A38C164627EA00260231 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +492,46 @@
 				D311FBA01636159500797BF9 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EDE1A355164627EA00260231 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDE1A356164627EA00260231 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EDE1A357164627EA00260231 /* TMViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDE1A358164627EA00260231 /* en */,
+			);
+			name = TMViewController.xib;
+			sourceTree = "<group>";
+		};
+		EDE1A365164627EA00260231 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDE1A366164627EA00260231 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		EDE1A367164627EA00260231 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDE1A368164627EA00260231 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EDE1A369164627EA00260231 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDE1A36A164627EA00260231 /* en */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -435,6 +661,7 @@
 				D311FBA91636159500797BF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D311FBAA1636159500797BF9 /* Build configuration list for PBXNativeTarget "iOS-CoSpace-Fall2012Tests" */ = {
 			isa = XCConfigurationList;
@@ -443,6 +670,7 @@
 				D311FBAC1636159500797BF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
