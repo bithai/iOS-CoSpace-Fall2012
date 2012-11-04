@@ -20,6 +20,18 @@
 		D311FB991636159500797BF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D311FB7A1636159500797BF9 /* Foundation.framework */; };
 		D311FBA11636159500797BF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D311FB9F1636159500797BF9 /* InfoPlist.strings */; };
 		D311FBA41636159500797BF9 /* iOS_CoSpace_Fall2012Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D311FBA31636159500797BF9 /* iOS_CoSpace_Fall2012Tests.m */; };
+		ED61E45716464B26007D4D99 /* ab-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED61E45616464B26007D4D99 /* ab-exercises.jpg */; };
+		ED61E46816465488007D4D99 /* arm-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED61E45D16465488007D4D99 /* arm-exercises.jpg */; };
+		ED61E46916465488007D4D99 /* back-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED61E45E16465488007D4D99 /* back-exercises.jpg */; };
+		ED61E46A16465488007D4D99 /* cardio-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED61E45F16465488007D4D99 /* cardio-exercises.jpg */; };
+		ED61E46B16465488007D4D99 /* chest-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED61E46016465488007D4D99 /* chest-exercises.jpg */; };
+		ED61E46C16465488007D4D99 /* core-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED61E46116465488007D4D99 /* core-exercises.jpg */; };
+		ED61E46D16465488007D4D99 /* fat-burning-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED61E46216465488007D4D99 /* fat-burning-exercises.jpg */; };
+		ED61E46E16465488007D4D99 /* home-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED61E46316465488007D4D99 /* home-exercises.jpg */; };
+		ED61E46F16465488007D4D99 /* leg-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED61E46416465488007D4D99 /* leg-exercises.jpg */; };
+		ED61E47016465488007D4D99 /* shoulder-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED61E46516465488007D4D99 /* shoulder-exercises.jpg */; };
+		ED61E47116465488007D4D99 /* stretching-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED61E46616465488007D4D99 /* stretching-exercises.jpg */; };
+		ED61E47216465488007D4D99 /* weight-lifting-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED61E46716465488007D4D99 /* weight-lifting-exercises.jpg */; };
 		EDE1A37F164627EA00260231 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EDE1A352164627EA00260231 /* .gitignore */; };
 		EDE1A38C164627EA00260231 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE1A374164627EA00260231 /* Reachability.m */; };
 		EDE1A38D164627EA00260231 /* Reachability.podspec in Resources */ = {isa = PBXBuildFile; fileRef = EDE1A375164627EA00260231 /* Reachability.podspec */; };
@@ -57,6 +69,18 @@
 		D311FBA01636159500797BF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D311FBA21636159500797BF9 /* iOS_CoSpace_Fall2012Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_CoSpace_Fall2012Tests.h; sourceTree = "<group>"; };
 		D311FBA31636159500797BF9 /* iOS_CoSpace_Fall2012Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_CoSpace_Fall2012Tests.m; sourceTree = "<group>"; };
+		ED61E45616464B26007D4D99 /* ab-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ab-exercises.jpg"; sourceTree = "<group>"; };
+		ED61E45D16465488007D4D99 /* arm-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "arm-exercises.jpg"; sourceTree = "<group>"; };
+		ED61E45E16465488007D4D99 /* back-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "back-exercises.jpg"; sourceTree = "<group>"; };
+		ED61E45F16465488007D4D99 /* cardio-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cardio-exercises.jpg"; sourceTree = "<group>"; };
+		ED61E46016465488007D4D99 /* chest-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "chest-exercises.jpg"; sourceTree = "<group>"; };
+		ED61E46116465488007D4D99 /* core-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "core-exercises.jpg"; sourceTree = "<group>"; };
+		ED61E46216465488007D4D99 /* fat-burning-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fat-burning-exercises.jpg"; sourceTree = "<group>"; };
+		ED61E46316465488007D4D99 /* home-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "home-exercises.jpg"; sourceTree = "<group>"; };
+		ED61E46416465488007D4D99 /* leg-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "leg-exercises.jpg"; sourceTree = "<group>"; };
+		ED61E46516465488007D4D99 /* shoulder-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shoulder-exercises.jpg"; sourceTree = "<group>"; };
+		ED61E46616465488007D4D99 /* stretching-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "stretching-exercises.jpg"; sourceTree = "<group>"; };
+		ED61E46716465488007D4D99 /* weight-lifting-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "weight-lifting-exercises.jpg"; sourceTree = "<group>"; };
 		EDE1A352164627EA00260231 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		EDE1A373164627EA00260231 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		EDE1A374164627EA00260231 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -138,6 +162,7 @@
 		D311FB7F1636159500797BF9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ED61E45C164651E5007D4D99 /* Images */,
 				D311FB801636159500797BF9 /* iOS-CoSpace-Fall2012-Info.plist */,
 				D311FB811636159500797BF9 /* InfoPlist.strings */,
 				D311FB841636159500797BF9 /* main.m */,
@@ -163,6 +188,25 @@
 				D311FB9F1636159500797BF9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ED61E45C164651E5007D4D99 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				ED61E45D16465488007D4D99 /* arm-exercises.jpg */,
+				ED61E45E16465488007D4D99 /* back-exercises.jpg */,
+				ED61E45F16465488007D4D99 /* cardio-exercises.jpg */,
+				ED61E46016465488007D4D99 /* chest-exercises.jpg */,
+				ED61E46116465488007D4D99 /* core-exercises.jpg */,
+				ED61E46216465488007D4D99 /* fat-burning-exercises.jpg */,
+				ED61E46316465488007D4D99 /* home-exercises.jpg */,
+				ED61E46416465488007D4D99 /* leg-exercises.jpg */,
+				ED61E46516465488007D4D99 /* shoulder-exercises.jpg */,
+				ED61E46616465488007D4D99 /* stretching-exercises.jpg */,
+				ED61E46716465488007D4D99 /* weight-lifting-exercises.jpg */,
+				ED61E45616464B26007D4D99 /* ab-exercises.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		EDE1A34E164627AD00260231 /* External */ = {
@@ -263,6 +307,18 @@
 				EDE1A37F164627EA00260231 /* .gitignore in Resources */,
 				EDE1A38D164627EA00260231 /* Reachability.podspec in Resources */,
 				EDE1A38E164627EA00260231 /* README.md in Resources */,
+				ED61E45716464B26007D4D99 /* ab-exercises.jpg in Resources */,
+				ED61E46816465488007D4D99 /* arm-exercises.jpg in Resources */,
+				ED61E46916465488007D4D99 /* back-exercises.jpg in Resources */,
+				ED61E46A16465488007D4D99 /* cardio-exercises.jpg in Resources */,
+				ED61E46B16465488007D4D99 /* chest-exercises.jpg in Resources */,
+				ED61E46C16465488007D4D99 /* core-exercises.jpg in Resources */,
+				ED61E46D16465488007D4D99 /* fat-burning-exercises.jpg in Resources */,
+				ED61E46E16465488007D4D99 /* home-exercises.jpg in Resources */,
+				ED61E46F16465488007D4D99 /* leg-exercises.jpg in Resources */,
+				ED61E47016465488007D4D99 /* shoulder-exercises.jpg in Resources */,
+				ED61E47116465488007D4D99 /* stretching-exercises.jpg in Resources */,
+				ED61E47216465488007D4D99 /* weight-lifting-exercises.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

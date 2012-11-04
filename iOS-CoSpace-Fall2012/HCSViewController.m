@@ -16,36 +16,35 @@
 
 @implementation HCSViewController
 
-@synthesize responseData = _responseData;
-@synthesize items = _items;
+@synthesize responseData = _responseData; // the result from network call
+@synthesize items = _items; // the list of items to display in tableView
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"viewDidLoad");
+  NSLog(@"viewDidLoad");
   
   // check if connection to server can be reached, if not display Alert
   [self checkReachability];
   
-  
-  
   self.responseData = [NSMutableData data];
   
+  // create instance of NSURLRequest with api endpoint
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://getfitchimp.aws.af.cm/api/v1/categories"]];
   
   // display the network activity indicator
-  // 
   // NOTE from stackoverflow: The UI won't be updated unless your code returns control to the runloop. So if you enable and disable the network indicator in the same method, it will never actually show.
   // so we hide the indicator in the connectDidFinishLoading method
   [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
   
+  // initialize request and make network call
   [[NSURLConnection alloc] initWithRequest:request delegate:self];
 
   
 }
 
-
+// checks for connection to server, sends Alert if not successful
 - (void)checkReachability
 {
   // allocate a reachability object
@@ -92,10 +91,12 @@
   [self.responseData setLength:0];
 }
 
+
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
   // A delegate method called by the NSURLConnection as data arrives.
 	[self.responseData appendData:data];
 }
+
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
   // A delegate method called by the NSURLConnection if the connection fails.
@@ -111,7 +112,6 @@
 
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection {
 
-  
   // A delegate method called by the NSURLConnection when the connection has been
   // done successfully.  We shut down the connection with a nil status, which
   // causes the image to be displayed.
@@ -138,6 +138,7 @@
   
 }
 
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   NSLog(@"Returning num sections");
   return 1;
@@ -148,6 +149,7 @@
   NSLog(@"rows = %d", self.items.count);
   return [self.items count];
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -164,7 +166,22 @@
                                   reuseIdentifier:cellIdentifier];
   }
  
+  // the single item row
   NSDictionary *item = [self.items objectAtIndex:indexPath.row];
+  
+  // exercise slug value (e.g. ab-exercises,chest-exercises)
+  NSString *slug = [item objectForKey:@"slug"];
+
+  // this loads the image from Resources
+  cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",slug]];
+  
+  //Alternative way to load image from url
+  //NSString *urlString = [NSString stringWithFormat:@"%@%@%@", @"http://www.site.com/pathtoimage/",slug,@".jpg"];
+  //NSURL *imageUrl = [NSURL URLWithString:urlString];
+  //NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+  //cell.imageView.image = [UIImage imageWithData:imageData];
+  
+  
   cell.textLabel.text = [item objectForKey:@"title"];
   return cell;
 }
