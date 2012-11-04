@@ -1,6 +1,10 @@
 Project idea:  Simple workout app that has multiple tabs. 
 1) exercises
+   - top level tab shows categories of exercises
+   - sub level shows list of exercises for each category
 2) workouts
+   - top level tab shows categories of workouts
+   - sub level tab shows list of workouts for that category
 3) favorites
 
 Exercise - one single specific exercise, like a push-up.  Will have detailed info view containing instructions, image, and any other relevant info.
