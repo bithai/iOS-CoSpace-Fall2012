@@ -26,7 +26,7 @@
     NSLog(@"viewDidLoad");
   
   
-  self.checkReachability;
+  [self checkReachability];
   
   
   
@@ -55,19 +55,7 @@
     NSLog(@"UNREACHABLE!");
   };
   
-  if(reach.isReachable) {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Alert"
-                                                   message: @"You're connected to the server"
-                                                  delegate: nil
-                                         cancelButtonTitle: @"OK"
-                                         otherButtonTitles:nil];
-    
-    //Show Alert On The View
-    [alert show];
-    
-    
-  }
-  else {
+  if(!reach.isReachable) {
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Alert"
                                                    message: @"You're not connected to the server"
                                                   delegate: nil
@@ -75,6 +63,7 @@
                                          otherButtonTitles:nil];
     [alert show];
   }
+
   
   // start the notifier which will cause the reachability object to retain itself!
   [reach startNotifier];
