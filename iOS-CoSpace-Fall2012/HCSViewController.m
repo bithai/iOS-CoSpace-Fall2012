@@ -24,7 +24,7 @@
     NSLog(@"viewDidLoad");
   self.responseData = [NSMutableData data];
   
-  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.twitter.com/1/statuses/user_timeline.json?screen_name=bithai"]];
+  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://getfitchimp.aws.af.cm/api/v1/categories"]];
   
   [[NSURLConnection alloc] initWithRequest:request delegate:self];
   
@@ -32,6 +32,7 @@
 
 - (void)viewDidUnload
 {
+  [self setTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 
@@ -71,15 +72,21 @@
 
   NSLog(@"data: %@", [NSString stringWithFormat:@"HTTP response data%@", result]);
   
-  self.items = result; //[result objectForKey:@"results"];
+  self.items = [result objectForKey:@"results"];
   for(NSDictionary *d in self.items) {
-    NSString *title = [d objectForKey:@"text"];
-    NSLog(@"text: %@", title);
+    NSString *title = [d objectForKey:@"title"];
+    NSLog(@"title: %@", title);
+    
+    [self.tableView reloadData];
     
   }
   
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  NSLog(@"Returning num sections");
+  return 1;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -90,10 +97,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   NSLog(@"cellForRowAtIndexPath");
-  UITableViewCell *cell = [[UITableViewCell alloc] init];
+  
+  // Identifier for retrieving reusable cells.
+  static NSString *cellIdentifier = @"CellId";
+  
+  // Attempt to request the reusable cell.
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+  
+  // No cell available - create one.
+  if(cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                  reuseIdentifier:cellIdentifier];
+  }
  
   NSDictionary *item = [self.items objectAtIndex:indexPath.row];
-  cell.textLabel.text = [item objectForKey:@"text"];
+  cell.textLabel.text = [item objectForKey:@"title"];
   return cell;
 }
 

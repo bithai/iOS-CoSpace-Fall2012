@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSMutableData *responseData;
 @property (strong, nonatomic) NSArray *items;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
