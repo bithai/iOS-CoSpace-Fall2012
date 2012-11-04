@@ -25,7 +25,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     NSLog(@"viewDidLoad");
   
-  
+  // check if connection to server can be reached, if not display Alert
   [self checkReachability];
   
   
@@ -34,7 +34,14 @@
   
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://getfitchimp.aws.af.cm/api/v1/categories"]];
   
+  // display the network activity indicator
+  // 
+  // NOTE from stackoverflow: The UI won't be updated unless your code returns control to the runloop. So if you enable and disable the network indicator in the same method, it will never actually show.
+  // so we hide the indicator in the connectDidFinishLoading method
+  [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
+  
   [[NSURLConnection alloc] initWithRequest:request delegate:self];
+
   
 }
 
@@ -96,6 +103,10 @@
   // would either display or log the actual error.
 	NSLog(@"didFailWithError");
   NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
+  
+  // hide network activity indicator after error
+  [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+  
 }
 
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection {
@@ -120,6 +131,9 @@
     
     [self.tableView reloadData];
     
+    // hide network activity indicator after loading of data
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+    
   }
   
 }
@@ -137,8 +151,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  NSLog(@"cellForRowAtIndexPath");
-  
+ 
   // Identifier for retrieving reusable cells.
   static NSString *cellIdentifier = @"CellId";
   
