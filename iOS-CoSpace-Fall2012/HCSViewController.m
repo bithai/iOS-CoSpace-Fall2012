@@ -9,6 +9,9 @@
 #import "HCSViewController.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "Reachability.h"
+#import "Exercise.h"
+
+#define kbExerciseCategoriesAPIURL @"http://getfitchimp.aws.af.cm/api/v1/categories"
 
 @interface HCSViewController ()
 
@@ -31,7 +34,7 @@
   self.responseData = [NSMutableData data];
   
   // create instance of NSURLRequest with api endpoint
-  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://getfitchimp.aws.af.cm/api/v1/categories"]];
+  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kbExerciseCategoriesAPIURL]];
   
   // display the network activity indicator
   // NOTE from stackoverflow: The UI won't be updated unless your code returns control to the runloop. So if you enable and disable the network indicator in the same method, it will never actually show.
@@ -48,7 +51,7 @@
 - (void)checkReachability
 {
   // allocate a reachability object
-  Reachability* reach = [Reachability reachabilityWithHostname:@"http://getfitchimp.aws.af.cm"];
+  Reachability* reach = [Reachability reachabilityWithHostname:[[NSURL URLWithString:kbExerciseCategoriesAPIURL] host]];
   
   // set the blocks
   reach.reachableBlock = ^(Reachability*reach)
@@ -103,7 +106,7 @@
   // We shut down the connection and display the failure.  Production quality code
   // would either display or log the actual error.
 	NSLog(@"didFailWithError");
-  NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
+  NSLog(@"Connection failed: %@", [error description]);
   
   // hide network activity indicator after error
   [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
@@ -125,16 +128,53 @@
   NSLog(@"data: %@", [NSString stringWithFormat:@"HTTP response data%@", result]);
   
   self.items = [result objectForKey:@"results"];
+  
   for(NSDictionary *d in self.items) {
     NSString *title = [d objectForKey:@"title"];
+    
     NSLog(@"title: %@", title);
     
-    [self.tableView reloadData];
     
-    // hide network activity indicator after loading of data
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+    
     
   }
+
+  
+  
+  for (NSDictionary *repoDict in self.items) {
+    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    
+    // If appropriate, configure the new managed object.
+    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+    [newManagedObject setValue:[repoDict valueForKeyPath:@"title"] forKey:@"title"];
+    [newManagedObject setValue:[repoDict valueForKeyPath:@"slug"] forKey:@"slug"];
+
+    
+//nslog(@"title: %@", repoDict valueForKey)
+    
+  }
+  // Save the context.
+  NSError *error = nil;
+  if (![self.managedObjectContext save:&error]) {
+    // Replace this implementation with code to handle the error appropriately.
+    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    abort();
+  }
+  
+  
+
+      [self.tableView reloadData];
+  
+  if (![[self fetchedResultsController] performFetch:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+  
+  // hide network activity indicator after loading of data
+  [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
   
 }
 
@@ -147,7 +187,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   NSLog(@"rows = %d", self.items.count);
-  return [self.items count];
+  //return [self.items count];
+  return [[self.fetchedResultsController fetchedObjects] count];
+  
 }
 
 
@@ -166,14 +208,15 @@
                                   reuseIdentifier:cellIdentifier];
   }
  
+ 
   // the single item row
-  NSDictionary *item = [self.items objectAtIndex:indexPath.row];
+  //NSDictionary *item = [self.items objectAtIndex:indexPath.row];
   
   // exercise slug value (e.g. ab-exercises,chest-exercises)
-  NSString *slug = [item objectForKey:@"slug"];
+  //NSString *slug = [item objectForKey:@"slug"];
 
   // this loads the image from Resources
-  cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",slug]];
+  //cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",slug]];
   
   //Alternative way to load image from url
   //NSString *urlString = [NSString stringWithFormat:@"%@%@%@", @"http://www.site.com/pathtoimage/",slug,@".jpg"];
@@ -182,7 +225,14 @@
   //cell.imageView.image = [UIImage imageWithData:imageData];
   
   
-  cell.textLabel.text = [item objectForKey:@"title"];
+  //cell.textLabel.text = [item objectForKey:@"title"];
+  
+  NSString *slug =  [[self.fetchedResultsController objectAtIndexPath:indexPath] slug];
+  NSString *title = [[self.fetchedResultsController objectAtIndexPath:indexPath] title];
+  
+  cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",slug]];
+  cell.textLabel.text = title;
+  
   return cell;
 }
 
@@ -198,5 +248,46 @@
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+
+#pragma mark - Fetched results controller
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+  if (_fetchedResultsController != nil) {
+    return _fetchedResultsController;
+  }
+  
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  // Edit the entity name as appropriate.
+  NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([Exercise class]) inManagedObjectContext:self.managedObjectContext];
+  [fetchRequest setEntity:entity];
+  
+  // Set the batch size to a suitable number.
+  [fetchRequest setFetchBatchSize:30];
+  
+  // Edit the sort key as appropriate.
+  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
+  NSArray *sortDescriptors = @[sortDescriptor];
+  
+  [fetchRequest setSortDescriptors:sortDescriptors];
+  
+  // Edit the section name key path and cache name if appropriate.
+  // nil for section name key path means "no sections".
+  NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+  //aFetchedResultsController.delegate = self;
+  self.fetchedResultsController = aFetchedResultsController;
+  
+	NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+    // Replace this implementation with code to handle the error appropriately.
+    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    abort();
+	}
+  
+  return _fetchedResultsController;
+}
+
+
 
 @end
